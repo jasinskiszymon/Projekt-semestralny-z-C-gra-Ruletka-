@@ -13,12 +13,11 @@ namespace rouletteApp
 
         static void Main(string[] args)
         {
-
+            logika gra = new logika();
             
             int attempts = 0;
             int bet;
             int money = 100;
-            List<string> licznik_wygranych = new List<string>();
         menu:
             
             int x = logika.losowa();
@@ -69,12 +68,15 @@ namespace rouletteApp
                         {
                             money += bet * 2;
                             attempts += 1;
-                            licznik_wygranych.Add("Gra Wygrana " + bet * 2);
+                            //licznik_wygranych.Add("Gra Wygrana " + bet * 2);
                             Console.WriteLine("Ruletka wylosowała kolor: " + kolor);
                             Console.WriteLine("Wygrałes +$" + bet * 2 + "! i aktualnie posiadasz :" + money + "$");
                             Console.WriteLine("Wciśnij <spacje> by kontynułować.");
-                            licznik_wygranych.Add("Gra Wygrana " + bet * 2);
+                            //licznik_wygranych.Add("Gra Wygrana!, Wygrałeś:" + bet * 2);
+                            string rezultat = $"Gra Wygrana!, Wygrałeś: + {bet * 2}";
+                            gra.DodajDoListy(rezultat);
                             Console.ReadKey();
+                            Console.Clear();
                         }
                         else
                         {
@@ -122,9 +124,11 @@ namespace rouletteApp
                         Console.WriteLine("The roulette rolled: " + x);
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("Wciśnij <spacje> by kontynułować.");
-                        licznik_wygranych.Add("Gra Wygrana " + bet * 2);
+                        string rezultat = $"Gra Wygrana!, Wygrałeś: + {bet * 2}";
+                        gra.DodajDoListy(rezultat); ;
                         Console.ReadKey();
-                       
+                        Console.Clear();
+
                     }
                     else
                     {
@@ -170,11 +174,9 @@ namespace rouletteApp
                         Console.WriteLine("The roulette rolled: " + x);
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
-                        licznik_wygranych.Add("Gra Wygrana " + bet * 2);
-                        Console.ReadKey();
+                        string rezultat = $"Gra Wygrana!, Wygrałeś: + {bet * 2}";
+                        gra.DodajDoListy(rezultat);
                     }
-
-                          
 
                     else if ((guesse == 2) && ((x > 51) && (x < 100)))
                     {
@@ -183,9 +185,9 @@ namespace rouletteApp
                         Console.WriteLine("<Press enter to continue>");
                         money += bet * 2;
                         attempts += 1;
-                        licznik_wygranych.Add("Gra Wygrana " +bet * 2);
-                        Console.ReadKey();
-                        
+                        string rezultat = $"Gra Wygrana!, Wygrałeś: + {bet * 2}";
+                        gra.DodajDoListy(rezultat);
+
 
                     }
 
@@ -209,15 +211,10 @@ namespace rouletteApp
 
 
                   case 4:
-                    
-                    
-                    for (int i = 0; i < licznik_wygranych.Count; i++)
-                    {
-                        Console.WriteLine($"{licznik_wygranych[i]}");
-                    }
-                        
-                    
 
+
+                    gra.WyswietlListe();
+  
                     Console.ReadKey();
                     goto menu;
             }

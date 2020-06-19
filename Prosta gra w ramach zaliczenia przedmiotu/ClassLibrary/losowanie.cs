@@ -1,10 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ClassLibrary
 {
     public class logika
     {
 
+
+        public List<string> licznik_wygranych;
+
+        public logika()
+        {
+            licznik_wygranych = new List<string>();
+        }
+    
         public static int losowa()
         {
             Random ran = new Random();
@@ -18,8 +27,27 @@ namespace ClassLibrary
             string ranColor = color[r.Next(color.Length)];
             return ranColor;
         }
+        public void DodajDoListy(string wynik)
+        {
+            licznik_wygranych.Add(wynik);
+        }
+        public void WyswietlListe()
+        {
+            for (int i = 0; i < licznik_wygranych.Count; i++)
+            {
+                Console.WriteLine($"{i} | {licznik_wygranych[i]}");
+                Console.WriteLine("Wciśnij < spacje > by kontynułować.");
+            }
+            
+        }
 
 
+        
+        
+           
+
+        
 
     }
+
 }
