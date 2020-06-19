@@ -1,34 +1,33 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
-
+using ClassLibrary;
 namespace rouletteApp
 {
     class Program
     {
-        static int menu()
+        
+        static int losowa()
         {
-            Console.WriteLine("podaj numer:");
-            int numer = int.Parse(Console.ReadLine());
-            return numer;
-
+            Random ran = new Random();
+            int roll = ran.Next(0, 100);
+            return roll;
         }
+        static string losowykolor() {
+            string[] color = { "Red", "Black" };
+            var r = new Random();
+            string ranColor = color[r.Next(color.Length)];
+            return ranColor;
+        } 
+
         static void Main(string[] args)
         {
+          
 
-            
 
-            string[] color = { "Red", "Black" };
             string guess;
             int attempts = 0;
             int bet;
-            int money = 100;
-
+            int money = 100;  
         menu:
-            Random ran = new Random();
-            int roll = ran.Next(0, 100);
-            var r = new Random();
             Console.WriteLine("Roulette by github.com/user/LunaMoon\n");
             Console.WriteLine("Hej, witaj w prostej aplikacji ktora pozwala zasymulowac ruletke.");
             Console.WriteLine("Posiadasz akrualnie: $" + money + "      Liczba gier: " + attempts + "\n");
@@ -40,7 +39,6 @@ namespace rouletteApp
 
             int liczba;
             liczba = int.Parse(Console.ReadLine());
-
             switch (liczba)
             {
                 case 1:
@@ -54,16 +52,12 @@ namespace rouletteApp
                         Console.WriteLine("Enter an amount to bet");
                         bet = Convert.ToInt32(Console.ReadLine());
                     }
-                    Random randomowy = new Random();
                     Console.WriteLine("hej, podaj jaki kolor chcesz obstawic, czerwony czy czarny :D ?");
                     guess = Console.ReadLine();
                     guess.ToLower();
                     //guess verifier
                     //to mozna w innym podprogramie a potem wywołac.
-                    bool check = guess == "1" || guess == "2" || guess == "przedzial-0-50" || guess == "przedzial-50-100" || guess == "RED" || guess == "BLACK";
-
-
-
+                    bool check = guess == "1" || guess == "2" || guess == "RED" || guess == "BLACK";
                     if (check == false)
                     {
                         Console.WriteLine("podales nieprawidlowa wartosc");
@@ -71,12 +65,12 @@ namespace rouletteApp
                     }
                     else
                     {
-                        string ranColor = color[r.Next(color.Length)];
-                        if ((guess == "RED") && (ranColor == "Red") || (guess == "BLACK") && (ranColor == "Black"))
+                        losowykolor();
+                        if ((guess == "RED") && (losowykolor() == "Red") || (guess == "BLACK") && (losowykolor() == "Black"))
                         {
                             money += bet * 2;
                             attempts += 1;
-                            Console.WriteLine("Ruletka wylosowała kolor: " + ranColor);
+                            Console.WriteLine("Ruletka wylosowała kolor: " + losowykolor());
                             Console.WriteLine("Wygrałes +$" + bet * 2 + "! i aktualnie posiadasz :" + money + "$");
                             Console.WriteLine("<kliknij enter by kontynułowac>");
                             Console.ReadKey();
@@ -84,7 +78,7 @@ namespace rouletteApp
                         else
                         {
                             money -= bet;
-                            Console.WriteLine("Ruletka wylosowała kolor: " + ranColor);
+                            Console.WriteLine("Ruletka wylosowała kolor: " + losowykolor());
                             Console.WriteLine("Niestety przegrałes i tracisz:! -$" + bet + "!");
                             Console.WriteLine("<Press enter to continue>");
                             attempts += 1;
@@ -113,26 +107,18 @@ namespace rouletteApp
                         bet = Convert.ToInt32(Console.ReadLine());
                     }
 
-
-
-
                     //guess verifier
                     //to mozna w innym podprogramie a potem wywołac.
-
-
-
-
-
-                    Console.WriteLine("liczba pazysta- wpisz 1");
-                    Console.WriteLine("liczba niepazysta- wpisz 2");
+                    Console.WriteLine("liczba nieparzysta- wpisz 1");
+                    Console.WriteLine("liczba parzysta- wpisz 2");
                     guess = Console.ReadLine();
                     guess.ToLower();
-                    bool even = roll % 2 == 0;
+                    bool even = losowa() % 2 == 0;
                     if ((((guess == "1") && (even == true))) || (((guess == "2") && (even == false))))
                     {
                         money += bet * 2;
                         attempts += 1;
-                        Console.WriteLine("The roulette rolled: " + roll);
+                        Console.WriteLine("The roulette rolled: " + losowa());
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
                         Console.ReadKey();
@@ -140,7 +126,7 @@ namespace rouletteApp
                     else
                     {
                         money -= bet;
-                        Console.WriteLine("The roulette rolled: " + roll);
+                        Console.WriteLine("The roulette rolled: " + losowa());
                         Console.WriteLine("Niestety przegrałes i tracisz:! -$" + bet + "!");
                         Console.WriteLine("<Press enter to continue>");
                         attempts += 1;
@@ -155,7 +141,6 @@ namespace rouletteApp
 
                     Console.Clear();
                     goto menu;
-
                 case 3:
                     Console.WriteLine("ile kasiorki chcesz postawic?");
                     bet = Convert.ToInt32(Console.ReadLine());
@@ -168,33 +153,26 @@ namespace rouletteApp
                         bet = Convert.ToInt32(Console.ReadLine());
                     }
 
-
-
-
                     //guess verifier
                     //to mozna w innym podprogramie a potem wywołac.
-
-
-
-
 
                     Console.WriteLine("przedział 1-50- wpisz 1");
                     Console.WriteLine("przedział 51-100- wpisz 2");
                     guess = Console.ReadLine();
                     guess.ToLower();
-                    if ((guess == "1") && ((roll > 0) && (roll < 19)))
+                    if ((guess == "1") && ((losowa() > 0) && (losowa() < 51)))
                     {
                         money += bet * 2;
                         attempts += 1;
-                        Console.WriteLine("The roulette rolled: " + roll);
+                        Console.WriteLine("The roulette rolled: " + losowa());
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
 
                         Console.ReadKey();
                     }
-                    else if ((guess == "2") && ((roll > 18) && (roll < 37)))
+                    else if ((guess == "2") && ((losowa() > 51) && (losowa() < 100)))
                     {
-                        Console.WriteLine("The roulette rolled: " + roll);
+                        Console.WriteLine("The roulette rolled: " + losowa());
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
                         money += bet * 2;
@@ -207,7 +185,7 @@ namespace rouletteApp
                     else
                     {
                         money -= bet;
-                        Console.WriteLine("The roulette rolled: " + roll);
+                        Console.WriteLine("The roulette rolled: " + losowa());
                         Console.WriteLine("You lost! -$" + bet + "!");
                         Console.WriteLine("<Press enter to continue>");
                         attempts += 1;
@@ -226,5 +204,3 @@ namespace rouletteApp
         }
     }
 }
-
-
