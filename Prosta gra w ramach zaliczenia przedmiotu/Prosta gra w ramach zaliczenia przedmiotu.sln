@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prosta gra w ramach zaliczenia przedmiotu", "..\Prosta gra w ramach zaliczenia przedmiotu\Prosta gra w ramach zaliczenia przedmiotu.csproj", "{A5A2808B-0061-4788-AE5B-80F3AA911F8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "..\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\ClassLibrary.csproj", "{383C3F4D-C05A-4AF9-8753-42EDA9CC45CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5A2808B-0061-4788-AE5B-80F3AA911F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A2808B-0061-4788-AE5B-80F3AA911F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A2808B-0061-4788-AE5B-80F3AA911F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A2808B-0061-4788-AE5B-80F3AA911F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383C3F4D-C05A-4AF9-8753-42EDA9CC45CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383C3F4D-C05A-4AF9-8753-42EDA9CC45CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383C3F4D-C05A-4AF9-8753-42EDA9CC45CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383C3F4D-C05A-4AF9-8753-42EDA9CC45CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA23A9B5-277F-4078-8F47-950C51B15135}
+	EndGlobalSection
+EndGlobal

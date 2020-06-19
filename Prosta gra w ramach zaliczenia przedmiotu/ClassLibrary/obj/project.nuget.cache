@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OYt132E0/SXh0gbcwQYswb3c3d/i6pUh65lV6t2HQWx3xTzdLoswVLhNZOQxjVTib2QzkpEb0QOc4hqMEIvgFw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\codeina\\source\\repos\\Projekt-semestralny-z-C-gra-Ruletka-\\Prosta gra w ramach zaliczenia przedmiotu\\ClassLibrary\\ClassLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\codeina\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\codeina\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

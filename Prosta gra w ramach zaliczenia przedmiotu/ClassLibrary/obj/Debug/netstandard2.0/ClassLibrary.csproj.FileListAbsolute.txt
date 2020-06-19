@@ -1,0 +1,9 @@
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\bin\Debug\netstandard2.0\ClassLibrary.deps.json
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\bin\Debug\netstandard2.0\ClassLibrary.dll
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\bin\Debug\netstandard2.0\ClassLibrary.pdb
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.csprojAssemblyReference.cache
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.AssemblyInfoInputs.cache
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.AssemblyInfo.cs
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.dll
+C:\Users\codeina\source\repos\Projekt-semestralny-z-C-gra-Ruletka-\Prosta gra w ramach zaliczenia przedmiotu\ClassLibrary\obj\Debug\netstandard2.0\ClassLibrary.pdb
