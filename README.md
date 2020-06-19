@@ -13,5 +13,5 @@ Projekt wykonany w ramach zaliczenia przedmiotu "wprowadzenie do programowania".
 
 A tobie ile najwiecej udało sie 
 Miłego grania!
-Projekt wykonał Szymon Jasiński.
+Projekt wykonał Szymon Jasiński :D.
 
