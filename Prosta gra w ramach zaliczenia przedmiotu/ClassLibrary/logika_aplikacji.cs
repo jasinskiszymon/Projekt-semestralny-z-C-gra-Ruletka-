@@ -22,7 +22,7 @@ namespace ClassLibrary
         }
         public static string losowykolor()
         {
-            string[] color = { "Red", "Black" };
+            string[] color = { "Czerwony", "Czarny" };
             var r = new Random();
             string ranColor = color[r.Next(color.Length)];
             return ranColor;
@@ -35,8 +35,10 @@ namespace ClassLibrary
         {
             for (int i = 0; i < licznik_wygranych.Count; i++)
             {
+
+                
                 Console.WriteLine($"{i} | {licznik_wygranych[i]}");
-                Console.WriteLine("Wciśnij < spacje > by kontynułować.");
+                
             }
             
         }
