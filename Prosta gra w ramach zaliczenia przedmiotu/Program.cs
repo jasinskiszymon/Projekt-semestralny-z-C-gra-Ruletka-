@@ -14,13 +14,16 @@ namespace rouletteApp
         static void Main(string[] args)
         {
 
-            string guess;
+            
             int attempts = 0;
             int bet;
             int money = 100;
+            List<string> licznik_wygranych = new List<string>();
         menu:
             
             int x = logika.losowa();
+            
+
             Console.WriteLine("Roulette by github.com/user/LunaMoon\n");
             Console.WriteLine("Hej, witaj w prostej aplikacji ktora pozwala zasymulowac ruletke.");
             Console.WriteLine("Posiadasz akrualnie: $" + money + "      Liczba gier: " + attempts + "\n");
@@ -35,6 +38,7 @@ namespace rouletteApp
             liczba = int.Parse(Console.ReadLine());
             switch (liczba)
             {
+
                 case 1:
                     Console.WriteLine("Ile pieniędzy chcesz postawić?");
                     bet = Convert.ToInt32(Console.ReadLine());
@@ -49,10 +53,10 @@ namespace rouletteApp
                     Console.WriteLine("Hej, jaki kolor chcesz postawic?");
                     Console.WriteLine("Czerwony - wpisz |1|");
                     Console.WriteLine("Czarny - wpisz |2|");
-                    guess = Console.ReadLine();
-                    guess.ToLower();
+                    int guess = int.Parse(Console.ReadLine());
+                    
 
-                    bool check = guess == "1" || guess == "2";
+                    bool check = guess == 1 || guess == 2;
                     if (check == false)
                     {
                         Console.WriteLine("Podales nieprawidłową wartość");
@@ -61,13 +65,15 @@ namespace rouletteApp
                     else
                     {
                         string kolor = logika.losowykolor();
-                        if ((guess == "1") && (kolor == "Czerwony") || (guess == "2") && (kolor == "Czarny"))
+                        if ((guess == 1) && (kolor == "Czerwony") || (guess == 2) && (kolor == "Czarny"))
                         {
                             money += bet * 2;
                             attempts += 1;
+                            licznik_wygranych.Add("Gra Wygrana " + bet * 2);
                             Console.WriteLine("Ruletka wylosowała kolor: " + kolor);
                             Console.WriteLine("Wygrałes +$" + bet * 2 + "! i aktualnie posiadasz :" + money + "$");
                             Console.WriteLine("Wciśnij <spacje> by kontynułować.");
+                            licznik_wygranych.Add("Gra Wygrana " + bet * 2);
                             Console.ReadKey();
                         }
                         else
@@ -106,17 +112,19 @@ namespace rouletteApp
                     //to mozna w innym podprogramie a potem wywołac.
                     Console.WriteLine("liczba parzysta- wpisz 1");
                     Console.WriteLine("liczba nieparzysta- wpisz 2");
-                    guess = Console.ReadLine();
-                    guess.ToLower();
+                    int guesss = int.Parse(Console.ReadLine());
+
                     bool even = x % 2 == 0;
-                    if ((((guess == "1") && (even == true))) || (((guess == "2") && (even == false))))
+                    if ((((guesss == 1) && (even == true))) || (((guesss == 2) && (even == false))))
                     {
                         money += bet * 2;
                         attempts += 1;
                         Console.WriteLine("The roulette rolled: " + x);
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("Wciśnij <spacje> by kontynułować.");
+                        licznik_wygranych.Add("Gra Wygrana " + bet * 2);
                         Console.ReadKey();
+                       
                     }
                     else
                     {
@@ -153,30 +161,31 @@ namespace rouletteApp
 
                     Console.WriteLine("przedział 1-50- wpisz 1");
                     Console.WriteLine("przedział 51-100- wpisz 2");
-                    guess = Console.ReadLine();
-                    guess.ToLower();
-                    if ((guess == "1") && (x > 0) && (x < 51)) 
+                    int guesse = int.Parse(Console.ReadLine());
+
+                    if ((guesse == 1) && (x > 0) && (x < 51)) 
                     {
                         money += bet * 2;
                         attempts += 1;
                         Console.WriteLine("The roulette rolled: " + x);
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
-                        
+                        licznik_wygranych.Add("Gra Wygrana " + bet * 2);
                         Console.ReadKey();
                     }
 
                           
 
-                    else if ((guess == "2") && ((x > 51) && (x < 100)))
+                    else if ((guesse == 2) && ((x > 51) && (x < 100)))
                     {
                         Console.WriteLine("The roulette rolled: " + x);
                         Console.WriteLine("You won! +$" + bet * 2 + "!");
                         Console.WriteLine("<Press enter to continue>");
                         money += bet * 2;
                         attempts += 1;
+                        licznik_wygranych.Add("Gra Wygrana " +bet * 2);
                         Console.ReadKey();
-
+                        
 
                     }
 
@@ -192,7 +201,7 @@ namespace rouletteApp
                         {
                             Console.WriteLine("You are out of money.");
                             Console.WriteLine("<Press enter to continue>");
-                            Console.ReadKey();
+                            
                         }
                     }
                     Console.Clear();
@@ -200,13 +209,16 @@ namespace rouletteApp
 
 
                   case 4:
-                    List<string> licznik_wygranych = new List<string>();
-                    licznik_wygranych.Add("Wygrana");
-                    foreach (string item in licznik_wygranych)
+                    
+                    
+                    for (int i = 0; i < licznik_wygranych.Count; i++)
                     {
-                        Console.WriteLine(item);
-
+                        Console.WriteLine($"{licznik_wygranych[i]}");
                     }
+                        
+                    
+
+                    Console.ReadKey();
                     goto menu;
             }
         }
